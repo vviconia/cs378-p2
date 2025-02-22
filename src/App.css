@@ -18,6 +18,12 @@
   border-radius: 10%;
 }
 
+.logoImage {
+  width: 180px;
+  height: 180px;
+  border-radius: 10%;
+}
+
 .addButton {
   border-radius: 10px;
   border: none;

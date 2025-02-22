@@ -1,5 +1,6 @@
 import './App.css';
 import MenuItem from './components/MenuItem';
+import MenuHeader from './components/MenuHeader'
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -78,6 +79,15 @@ const menuItems = [
   }
 ];
 
+const menuHeader = [
+  {
+    id: 11,
+    title: 'UT-Japan',
+    logoName: 'JPLogo.png',
+    restaurant: 'Asia Brought to Texas',
+    description: 'The Flavor Spot of UT',
+  }
+];
 
 function App() {
   return (
@@ -85,33 +95,24 @@ function App() {
       <div id="container">
 
         <div class="text-center">
-          <img src="logo192.png" alt="Logo for VZ Campus Cafe" class="img-fluid mx-auto logo"/>
-          <br></br>
-          <br></br>
+          <img src={`${process.env.PUBLIC_URL}/JPLogo.png`} alt="restaurant logo" class="logoImage" />
         </div>
 
-        <div class="row">
-          <div class="col-12">
-            <p class="fancyText text-center">Asia Brought to Texas</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <p class="text-center"> The Flavor Spot of UT</p>
-            <br></br>
-          </div>
-        </div>
+        <MenuHeader title={menuHeader[0].title} />
+        <MenuHeader logoName={`${process.env.PUBLIC_URL}/${menuHeader[0].logoName}`} />
+        <MenuHeader restaurant={menuHeader[0].restaurant} />
+        <MenuHeader description={menuHeader[0].description} />
+        
 
         <h1>Menu</h1>
 
         <div>
-          {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
+          {/* Display menu items dynamicaly by iterating over the provided menuItems */}
           {menuItems.map(({ title, imageName, description, price }, index) => (
             <MenuItem 
               key={index} 
               title={title} 
-              imageName={`/images/${imageName}`} 
+              imageName={`${process.env.PUBLIC_URL}/images/${imageName}`} 
               description={description} 
               price={price} 
             />
