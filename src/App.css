@@ -1,0 +1,36 @@
+/* 
+  Style your elements by creating CSS classes here.
+  Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
+*/
+
+.menu {
+  color: blue;
+}
+
+.parent {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+}
+
+.itemImage {
+  width: 87px;
+  height: 87px;
+  border-radius: 10%;
+}
+
+.addButton {
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  line-height: 1;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.fancyText {
+  font-family: cursive;
+  color: blue;
+}
